@@ -37,7 +37,11 @@ jobs:
 
       # 4. 生成静态文件
       - name: Build Hexo
-        run: npx hexo generate
+        run: npx hexo generate --debug
+
+      # 4.1 检查 public 目录是否生成
+      - name: Check build output
+        run: ls -la public || echo "public directory not found"
 
       # 5. 上传构建产物供 Cloudflare Pages 部署
       - name: Upload Pages artifact
