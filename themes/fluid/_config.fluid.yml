@@ -77,15 +77,6 @@ google_analytics:
 #   imageUploader: false
 
 # SEO - Sitemap
-# 需要在站点根目录安装：yarn add hexo-generator-sitemap
 sitemap:
   path: sitemap.xml
   rel: false
-
-# SEO - robots.txt
-# 需要在站点根目录安装：yarn add hexo-generator-robots-txt
-robots_txt:
-  allow: /
-  disallow:
-    - /admin/
-    - /tags/
