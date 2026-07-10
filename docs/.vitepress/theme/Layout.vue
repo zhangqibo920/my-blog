@@ -2,8 +2,11 @@
 import DefaultTheme from 'vitepress/theme'
 import StatsFooter from './components/StatsFooter.vue'
 import PageViews from './components/PageViews.vue'
+import { useBusuanzi } from './composables/useBusuanzi'
 
 const { Layout: DefaultLayout } = DefaultTheme
+
+useBusuanzi()
 </script>
 
 <template>
