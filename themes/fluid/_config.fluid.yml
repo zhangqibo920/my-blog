@@ -5,6 +5,19 @@
 # 博客名称（不填则读取根 _config.yml 的 title）
 name: 栈里拾光
 
+# 浏览器标签页图标（覆盖主题默认的 fluid.png）
+favicon: /img/avatar.png
+apple_touch_icon: /img/avatar.png
+
+# 导航栏标题（覆盖主题默认的 Fluid）
+navbar:
+  blog_title: "栈里拾光"
+
+# 首页副标题（覆盖主题默认的 slogan）
+slogan:
+  enable: true
+  text: "借堆栈含义，记录学习时光"
+
 # 首页 Banner 图片
 index:
   banner_img: /img/banner.jpg
@@ -48,8 +61,10 @@ typed:
 # 图标
 icon_font:
   enable: false
-# 页脚备案
+
+# 页脚（覆盖主题默认的 Hexo ❤ Fluid）
 footer:
+  content: ''
   info:
 # 访客分析
 busuanzi:
@@ -60,6 +75,46 @@ baidu_analytics:
 # Google 分析
 google_analytics:
   enable: false
+
+# 关于页（覆盖主题默认的 Fluid 信息）
+about:
+  name: "zhangqibo920"
+  intro: "记录编程学习与技术思考"
+  avatar: /img/avatar.png
+  icons:
+    - { class: "iconfont icon-github-fill", link: "https://github.com/zhangqibo920", tip: "GitHub" }
+
+# 友链页（覆盖主题默认的 Fluid 链接）
+links:
+  enable: false
+
+# 归档页
+archive:
+  banner_img: /img/banner.jpg
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+# 分类页
+category:
+  enable: true
+  banner_img: /img/banner.jpg
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+# 标签页
+tag:
+  enable: true
+  banner_img: /img/banner.jpg
+  banner_img_height: 80
+  banner_mask_alpha: 0.3
+
+# 404页
+page404:
+  enable: true
+  banner_img: /img/banner.jpg
+  banner_img_height: 85
+  banner_mask_alpha: 0.3
+  redirect_delay: 5000
 
 # ============================================================
 # 评论系统（Waline）—— 后期启用时取消下方注释并填写
