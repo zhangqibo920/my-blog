@@ -21,8 +21,6 @@ jobs:
       # 1. 检出仓库代码
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       # 2. 安装 Node.js 22 环境
       - name: Setup Node.js
@@ -31,21 +29,13 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      # 3. 安装项目依赖
+      # 3. 安装项目依赖（主题已在仓库 themes/fluid 中）
       - name: Install dependencies
         run: npm install
 
-      # 3.1 将 npm 安装的 Fluid 主题复制到 themes 目录
-      - name: Link Fluid theme
-        run: cp -r node_modules/hexo-theme-fluid themes/fluid
-
       # 4. 生成静态文件
       - name: Build Hexo
-        run: npx hexo generate --debug
-
-      # 4.1 检查 public 目录是否生成
-      - name: Check build output
-        run: ls -la public || echo "public directory not found"
+        run: npx hexo generate
 
       # 5. 上传构建产物供 Cloudflare Pages 部署
       - name: Upload Pages artifact
