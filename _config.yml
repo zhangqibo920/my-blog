@@ -3,16 +3,16 @@
 # ============================================================
 
 # 站点基本信息
-title: My Blog              # 博客标题
-subtitle: Welcome to my blog # 副标题
-description: A tech blog about programming # 站点描述
-keywords: blog,tech,programming    # 关键词，英文逗号分隔
-author: Your Name        # 作者名
+title: 栈里拾光              # 博客标题
+subtitle: 借堆栈含义，记录学习时光 # 副标题
+description: 一个记录编程学习的博客 # 站点描述
+keywords: 编程,技术,学习笔记    # 关键词，英文逗号分隔
+author: zhangqibo920        # 作者名
 language: zh-CN                # 语言
 timezone: Asia/Shanghai        # 时区
 
 # URL 配置
-url: https://your-domain.com  # 完整站点地址，替换为你的域名
+url: https://zhangqibo920.github.io/my-blog  # GitHub Pages 地址
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
