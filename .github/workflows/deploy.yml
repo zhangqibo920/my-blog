@@ -1,60 +1,33 @@
-# ============================================================
-# GitHub Actions: 构建 Hexo 并部署到 Cloudflare Pages
-# ============================================================
-
 name: Deploy to Cloudflare Pages
 
-# 触发条件：main 分支 push 时运行
 on:
   push:
     branches: [main]
 
-# 并发控制：同一时间只运行一个部署，取消队列中旧的运行
 concurrency:
   group: deploy
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. 检出仓库代码
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 2. 安装 Node.js 22 环境
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
-      # 3. 安装项目依赖（主题已在仓库 themes/fluid 中）
       - name: Install dependencies
         run: npm install
 
-      # 4. 生成静态文件
-      - name: Build Hexo
-        run: npx hexo generate
+      - name: Build
+        run: npm run docs:build
 
-      # 5. 上传构建产物供 Cloudflare Pages 部署
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-
-  # 独立的部署 job，Cloudflare Pages 专用
-  deploy:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      # 6. 部署到 Cloudflare Pages
       - name: Deploy to Cloudflare Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy docs/.vitepress/dist --project-name=my-blog
