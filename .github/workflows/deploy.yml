@@ -1,0 +1,69 @@
+# ============================================================
+# GitHub Actions: 构建 Hexo 并部署到 Cloudflare Pages
+# ============================================================
+
+name: Deploy to Cloudflare Pages
+
+# 触发条件：main 分支 push 时运行
+on:
+  push:
+    branches: [main]
+
+# 并发控制：同一时间只运行一个部署，取消队列中旧的运行
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出仓库代码
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整 Git 历史（Hexo 需要）
+
+      # 2. 安装 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'        # 使用 Node.js 20 LTS
+          cache: 'yarn'             # 缓存 yarn 依赖加速后续构建
+
+      # 3. 安装项目依赖
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile  # 使用 lockfile 保证依赖版本一致
+
+      # 4. 安装主题和 SEO 插件
+      - name: Install Fluid theme & plugins
+        run: |
+          yarn add hexo-theme-fluid        # Fluid 主题
+          yarn add hexo-generator-sitemap   # Sitemap 生成
+          yarn add hexo-generator-robots-txt # robots.txt 生成
+
+      # 5. 生成静态文件
+      - name: Build Hexo
+        run: npx hexo generate             # 编译输出到 public 目录
+
+      # 6. 上传构建产物供 Cloudflare Pages 部署
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public  # Cloudflare Pages 读取此目录作为站点根
+
+  # 独立的部署 job，Cloudflare Pages 专用
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write        # 写入 Cloudflare Pages
+      id-token: write     # OIDC 认证令牌
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # 7. 部署到 Cloudflare Pages
+      - name: Deploy to Cloudflare Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

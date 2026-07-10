@@ -1,0 +1,91 @@
+# ============================================================
+# Fluid 主题配置
+# ============================================================
+
+# 博客名称（不填则读取根 _config.yml 的 title）
+name: {{blog_title}}
+
+# 首页 Banner 图片
+index:
+  banner_img: /img/banner.jpg
+  banner_img_height: 70
+  banner_mask_alpha: 0.3
+
+# 文章页面
+post:
+  # 文章右侧 TOC 目录
+  toc:
+    enable: true
+    number: true
+  # 文章授权声明
+  copyright:
+    enable: false
+
+# 暗黑模式：auto 跟随系统 | light 始终亮色 | dark 始终暗色
+dark_mode: auto
+
+# 代码块样式
+code:
+  highlight:
+    enable: true
+    style: night
+    # Prism 语法高亮
+    prism:
+      enable: false
+
+# 图片懒加载
+lazyload:
+  enable: true
+
+# 搜索功能（关闭以减少体积）
+search:
+  enable: false
+
+# 不需要的第三方组件全部关闭
+# 打字特效
+typed:
+  enable: false
+# 图标
+icon_font:
+  enable: false
+# 页脚备案
+footer:
+  info:
+# 访客分析
+busuanzi:
+  enable: false
+# 百度统计
+baidu_analytics:
+  enable: false
+# Google 分析
+google_analytics:
+  enable: false
+
+# ============================================================
+# 评论系统（Waline）—— 后期启用时取消下方注释并填写
+# ============================================================
+# comments:
+#   enable: true
+#   type: waline
+#
+# waline:
+#   serverURL: {{waline_server_url}}    # Waline 服务端地址
+#   meta: ["nick", "mail", "link"]
+#   requiredMeta: ["nick"]
+#   wordLimit: 0
+#   pageSize: 10
+#   imageUploader: false
+
+# SEO - Sitemap
+# 需要在站点根目录安装：yarn add hexo-generator-sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+
+# SEO - robots.txt
+# 需要在站点根目录安装：yarn add hexo-generator-robots-txt
+robots_txt:
+  allow: /
+  disallow:
+    - /admin/
+    - /tags/

@@ -1,0 +1,65 @@
+# ============================================================
+# Hexo 主站点配置
+# ============================================================
+
+# 站点基本信息
+title: {{blog_title}}          # 博客标题
+subtitle: {{blog_subtitle}}    # 副标题
+description: {{site_description}} # 站点描述
+keywords: {{site_keywords}}    # 关键词，英文逗号分隔
+author: {{author_name}}        # 作者名
+language: zh-CN                # 语言
+timezone: Asia/Shanghai        # 时区
+
+# URL 配置
+url: {{site_url}}              # 完整站点地址，如 https://blog.example.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# 目录配置
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+
+# 写作配置
+new_post_name: :title.md
+default_layout: post
+auto_spacing: false
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+
+# 代码高亮
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: false
+
+# 分页
+per_page: 10
+pagination_dir: page
+
+# 扩展
+theme: fluid
+
+# 部署配置（仅本地参考，实际部署由 GitHub Actions 完成）
+deploy:
+  type: ''
