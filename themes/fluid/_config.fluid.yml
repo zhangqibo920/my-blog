@@ -69,7 +69,7 @@ google_analytics:
 #   type: waline
 #
 # waline:
-#   serverURL: {{waline_server_url}}    # Waline 服务端地址
+#   serverURL: REPLACE_WITH_WALINE_URL    # Waline 服务端地址
 #   meta: ["nick", "mail", "link"]
 #   requiredMeta: ["nick"]
 #   wordLimit: 0
