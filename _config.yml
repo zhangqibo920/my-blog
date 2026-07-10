@@ -3,16 +3,16 @@
 # ============================================================
 
 # 站点基本信息
-title: {{blog_title}}          # 博客标题
-subtitle: {{blog_subtitle}}    # 副标题
-description: {{site_description}} # 站点描述
-keywords: {{site_keywords}}    # 关键词，英文逗号分隔
-author: {{author_name}}        # 作者名
+title: My Blog              # 博客标题
+subtitle: Welcome to my blog # 副标题
+description: A tech blog about programming # 站点描述
+keywords: blog,tech,programming    # 关键词，英文逗号分隔
+author: Your Name        # 作者名
 language: zh-CN                # 语言
 timezone: Asia/Shanghai        # 时区
 
 # URL 配置
-url: {{site_url}}              # 完整站点地址，如 https://blog.example.com
+url: https://your-domain.com  # 完整站点地址，替换为你的域名
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

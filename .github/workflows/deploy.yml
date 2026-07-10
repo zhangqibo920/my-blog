@@ -35,6 +35,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 3.1 将 npm 安装的 Fluid 主题复制到 themes 目录
+      - name: Link Fluid theme
+        run: cp -r node_modules/hexo-theme-fluid themes/fluid
+
       # 4. 生成静态文件
       - name: Build Hexo
         run: npx hexo generate --debug

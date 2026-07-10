@@ -3,7 +3,7 @@
 # ============================================================
 
 # 博客名称（不填则读取根 _config.yml 的 title）
-name: {{blog_title}}
+name: My Blog
 
 # 首页 Banner 图片
 index:
