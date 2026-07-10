@@ -6,7 +6,7 @@ layout: page
 
 <div class="home-hero">
   <div class="home-hero-content">
-    <h1 class="home-title">Hi, 我是 <span class="home-name">zhangqibo</span></h1>
+    <h1 class="home-title">Hi, 我是 <span class="home-name">qb</span></h1>
     <p class="home-desc">全栈开发者 / 技术爱好者 / 终身学习者</p>
     <p class="home-intro">专注于 Java、Vue.js 全栈开发，喜欢用代码解决实际问题。这里是我记录技术成长、分享学习心得的地方。</p>
     <div class="home-actions">
@@ -17,7 +17,7 @@ layout: page
   <div class="home-hero-visual">
     <div class="code-block">
       <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">developer</span> = {</div>
-      <div class="code-line">  <span class="code-key">name</span>: <span class="code-string">"zhangqibo"</span>,</div>
+      <div class="code-line">  <span class="code-key">name</span>: <span class="code-string">"qb"</span>,</div>
       <div class="code-line">  <span class="code-key">role</span>: <span class="code-string">"Full Stack"</span>,</div>
       <div class="code-line">  <span class="code-key">skills</span>: [</div>
       <div class="code-line">    <span class="code-string">"Java"</span>, <span class="code-string">"Spring Boot"</span>,</div>

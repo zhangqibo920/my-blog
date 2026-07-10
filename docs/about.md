@@ -2,7 +2,7 @@
 
 <div class="about-intro">
 
-## 你好，我是 zhangqibo
+## 你好，我是 qb
 
 一名全栈开发者，热爱技术，享受用代码解决问题的过程。
 
@@ -79,7 +79,7 @@
 
 ## 联系方式
 
-- **GitHub**: [zhangqibo920](https://github.com/zhangqibo920)
+- **GitHub**: [qb](https://github.com/zhangqibo920)
 - **Email**: 3368776560@qq.com
 
 ---

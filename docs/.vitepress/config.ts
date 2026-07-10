@@ -7,6 +7,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['script', { async: true, src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }],
   ],
 
   themeConfig: {
@@ -14,14 +15,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      {
-        text: '博客',
-        items: [
-          { text: '全部文章', link: '/blog/' },
-          { text: 'Vue 技术', link: '/blog/vue-composition-api' },
-          { text: 'TypeScript', link: '/blog/typescript-utility-types' },
-        ],
-      },
+      { text: '博客', link: '/blog/' },
       { text: '札记', link: '/notes/' },
       { text: '项目经历', link: '/projects/' },
       { text: '关于', link: '/about' },
@@ -30,18 +24,13 @@ export default defineConfig({
     sidebar: {
       '/blog/': [
         {
-          text: '前端开发',
+          text: '文章分类',
           items: [
-            { text: 'Vue 3 组合式 API', link: '/blog/vue-composition-api' },
-            { text: 'TypeScript 工具类型', link: '/blog/typescript-utility-types' },
-            { text: 'CSS 容器查询实战', link: '/blog/css-container-queries' },
-          ],
-        },
-        {
-          text: '工程化',
-          items: [
-            { text: 'Vite 性能优化', link: '/blog/vite-performance' },
-            { text: 'Monorepo 最佳实践', link: '/blog/monorepo-practices' },
+            { text: '全部文章', link: '/blog/' },
+            { text: 'Vue.js', link: '/blog/vue' },
+            { text: 'TypeScript', link: '/blog/typescript' },
+            { text: 'CSS', link: '/blog/css' },
+            { text: '工程化', link: '/blog/engineering' },
           ],
         },
       ],
@@ -90,7 +79,8 @@ export default defineConfig({
     },
 
     outline: {
-      label: '页面导航',
+      label: '文章目录',
+      level: [2, 3],
     },
 
     docFooter: {
