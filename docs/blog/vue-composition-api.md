@@ -1,3 +1,9 @@
+---
+title: Vue 3 组合式 API 深度指南
+description: 深入探讨 Vue 3 组合式 API 核心概念和最佳实践
+date: 2026-07-10
+---
+
 # Vue 3 组合式 API 深度指南
 
 组合式 API（Composition API）是 Vue 3 最重要的特性之一。本文将深入探讨其核心概念和最佳实践。

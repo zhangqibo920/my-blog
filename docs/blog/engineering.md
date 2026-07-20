@@ -1,3 +1,8 @@
+---
+title: 工程化
+description: 前端工程化相关的技术文章
+---
+
 # 工程化
 
 前端工程化相关的技术文章。
@@ -18,37 +23,19 @@
 
 </div>
 
-<style>
-.article-card {
-  padding: 20px 24px;
-  margin: 16px 0;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  transition: all 0.25s;
-}
+<div class="article-card">
 
-.article-card:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
+## [微信支付集成实战](/blog/wechat-pay)
 
-.article-card h2 {
-  margin-top: 0 !important;
-  font-size: 18px;
-}
+从零开始搭建微信支付的完整流程，包含签名、下单、回调处理。
 
-.article-card h2 a {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-}
+</div>
 
-.article-card h2 a:hover {
-  text-decoration: underline;
-}
+<div class="article-card">
 
-.article-card p {
-  margin: 8px 0 0;
-  font-size: 14px;
-  color: var(--vp-c-text-2);
-}
-</style>
+## [支付宝支付集成实战](/blog/alipay-pay)
+
+从零开始搭建支付宝支付的完整流程，包含电脑网站支付、手机网站支付。
+
+</div>
+

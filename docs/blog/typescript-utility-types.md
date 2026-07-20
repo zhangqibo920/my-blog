@@ -1,3 +1,9 @@
+---
+title: TypeScript 实用工具类型详解
+description: TypeScript 内置了许多工具类型，能极大提升类型编程效率
+date: 2026-07-10
+---
+
 # TypeScript 实用工具类型详解
 
 TypeScript 内置了许多工具类型，能极大提升类型编程效率。本文逐一讲解最常用的那些。

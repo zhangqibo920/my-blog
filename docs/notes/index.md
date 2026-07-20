@@ -1,10 +1,17 @@
+---
+title: 学习札记
+description: 每天记录学习中的点滴，积累成长的足迹
+---
+
 # 学习札记
 
 每天记录学习中的点滴，积累成长的足迹。
 
-<div class="timeline">
+<NoteHeatmap />
 
-<div class="timeline-item">
+<div class="timeline" role="list" aria-label="学习笔记时间轴">
+
+<div class="timeline-item" role="listitem">
   <div class="timeline-dot"></div>
   <div class="timeline-date">2026-07-10</div>
   <div class="timeline-content">
@@ -17,7 +24,7 @@
   </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" role="listitem">
   <div class="timeline-dot"></div>
   <div class="timeline-date">2026-07-09</div>
   <div class="timeline-content">
@@ -30,7 +37,7 @@
   </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" role="listitem">
   <div class="timeline-dot"></div>
   <div class="timeline-date">2026-07-08</div>
   <div class="timeline-content">
@@ -43,7 +50,7 @@
   </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" role="listitem">
   <div class="timeline-dot"></div>
   <div class="timeline-date">2026-07-07</div>
   <div class="timeline-content">
@@ -56,7 +63,7 @@
   </div>
 </div>
 
-<div class="timeline-item">
+<div class="timeline-item" role="listitem">
   <div class="timeline-dot"></div>
   <div class="timeline-date">2026-07-06</div>
   <div class="timeline-content">
@@ -128,7 +135,7 @@
   padding: 16px 20px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 10px;
-  transition: all 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .timeline-content:hover {
@@ -193,6 +200,13 @@
 
   .timeline-content {
     margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-dot,
+  .timeline-content {
+    transition: none !important;
   }
 }
 </style>

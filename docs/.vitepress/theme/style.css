@@ -4,3 +4,127 @@
   --vp-c-brand-3: #5672cd;
   --vp-c-brand-soft: rgba(100, 108, 255, 0.14);
 }
+
+html.dark {
+  --vp-c-brand-soft: rgba(100, 108, 255, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Blog article card */
+.article-card {
+  padding: 20px 24px;
+  margin: 16px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.article-card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.article-card h2 {
+  margin-top: 0 !important;
+  font-size: 18px;
+}
+
+.article-card h2 a {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.article-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.article-card p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+}
+
+/* Medium-zoom overlay */
+.medium-zoom-overlay {
+  z-index: 999 !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1000 !important;
+}
+
+.mermaid-toggle {
+  position: relative;
+  margin: 1.5em 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.mermaid-toggle-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.mermaid-toggle-btn:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.mermaid-toggle-btn.code-active {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.mermaid-diagram {
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.mermaid-diagram svg {
+  max-width: none;
+  height: auto;
+  min-width: 600px;
+}
+
+.mermaid-diagram > svg {
+  width: auto;
+  max-width: none;
+}
+
+.mermaid-code {
+  margin: 0;
+  padding: 0;
+}
+
+.mermaid-code pre {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}

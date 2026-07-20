@@ -6,31 +6,63 @@ export default defineConfig({
   lang: 'zh-CN',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['script', { async: true, src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['script', { async: true, src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: '栈里拾光' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'theme-color', content: '#3451b2' }],
   ],
+
+  sitemap: {
+    hostname: 'https://qb-ez5.pages.dev',
+  },
+
+  transformHead(ctx) {
+    const head: [string, Record<string, string>][] = []
+    if (ctx.pageData.title) {
+      head.push(['meta', { property: 'og:title', content: ctx.pageData.title }])
+    }
+    if (ctx.pageData.description) {
+      head.push(['meta', { property: 'og:description', content: ctx.pageData.description }])
+    }
+    head.push(['meta', { property: 'og:image', content: 'https://qb-ez5.pages.dev/favicon.svg' }])
+    return head
+  },
+
+  lastUpdated: true,
 
   themeConfig: {
     siteTitle: '栈里拾光',
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '博客', link: '/blog/' },
+      { text: '学习专栏', link: '/blog/' },
       { text: '札记', link: '/notes/' },
       { text: '项目经历', link: '/projects/' },
-      { text: '关于', link: '/about' },
+      { text: '关于', link: '/about/' },
     ],
 
     sidebar: {
       '/blog/': [
         {
-          text: '文章分类',
+          text: '专栏分类',
           items: [
-            { text: '全部文章', link: '/blog/' },
+            { text: '全部内容', link: '/blog/' },
             { text: 'Vue.js', link: '/blog/vue' },
             { text: 'TypeScript', link: '/blog/typescript' },
             { text: 'CSS', link: '/blog/css' },
+            { text: 'Java', link: '/blog/java' },
+            { text: 'MySQL', link: '/blog/mysql' },
             { text: '工程化', link: '/blog/engineering' },
+            {
+              text: '支付集成',
+              collapsed: false,
+              items: [
+                { text: '微信支付', link: '/blog/wechat-pay' },
+                { text: '支付宝支付', link: '/blog/alipay-pay' },
+              ],
+            },
           ],
         },
       ],
@@ -39,9 +71,11 @@ export default defineConfig({
           text: '项目列表',
           items: [
             { text: '全部项目', link: '/projects/' },
-            { text: '企业级管理后台', link: '/projects/admin' },
-            { text: '微信小程序商城', link: '/projects/miniprogram' },
-            { text: '跨端校园服务平台', link: '/projects/campus' },
+            { text: '大学牲 App', link: '/projects/college-life' },
+            { text: '定向运动', link: '/projects/orienteering' },
+            { text: '脊柱康复', link: '/projects/spine-rehab' },
+            { text: '"战书"双语阅读器', link: '/projects/war-book' },
+            { text: '一起来工具箱', link: '/projects/toolkit' },
           ],
         },
       ],

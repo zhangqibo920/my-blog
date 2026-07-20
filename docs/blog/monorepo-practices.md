@@ -1,3 +1,9 @@
+---
+title: Monorepo 最佳实践
+description: Monorepo 是将多个项目放在一个仓库中管理的方式
+date: 2026-07-10
+---
+
 # Monorepo 最佳实践
 
 Monorepo 是将多个项目放在一个仓库中管理的方式。本文介绍如何用 pnpm workspace 搭建 Monorepo 工程。
